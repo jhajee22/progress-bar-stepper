@@ -1,0 +1,30 @@
+<div class="progress-bar-wrapper">
+    <ng-container *ngFor="let step of pendingActivities; let i = index">
+      <div class="step"
+           [ngClass]="{
+             'completed': isPendingActivitiesCompleted(step),
+             'current': step === currentStep
+           }">
+        <div class="circle">{{ i + 1 }}</div>
+        <div class="label">{{ step }}</div>
+      </div>
+  
+      <!-- Line between steps -->
+      <div *ngIf="i < pendingActivities.length - 1"
+           class="line"
+           [ngClass]="{
+             'completed': isPendingActivitiesCompleted(pendingActivities[i + 1]),
+             'incomplete': !isPendingActivitiesCompleted(pendingActivities[i + 1]),
+             'current': pendingActivities[i] === currentStep
+           }">
+      </div>
+    </ng-container>
+  </div>
+  
+  
+  
+  
+  
+  
+    
+  

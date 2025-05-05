@@ -1,0 +1,73 @@
+.progress-bar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 10px;
+    position: relative;
+    flex-wrap: nowrap;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  
+    .circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ccc;
+      color: white;
+      text-align: center;
+      line-height: 30px;
+      z-index: 1;
+      background-color: #f44336;
+    }
+  
+    .label {
+      margin-top: 8px;
+      font-size: 12px;
+      text-align: center;
+      width: 80px;
+    }
+  
+    &.completed .circle {
+      background-color: #4caf50;
+      
+    }
+    &.current .circle {
+      background-color: #ffeb3b; /* Yellow */
+      color: black;
+      font-weight: bold;
+    }
+  }
+  
+  .line {
+    height: 4px;
+    background-color: #ccc;
+    flex: 1;
+    margin: 0 -25px;
+    align-self: center;
+    transform: translateY(-15px); 
+    background-color: #f44336;
+  
+    &.completed {
+      background-color: #4caf50;
+    }
+    &.current {
+      background-color: #ffeb3b; /* Yellow line for current step */
+    }
+    
+    &.current .circle {
+      background-color: #ffeb3b; /* 🟡 Yellow */
+      color: black;
+      font-weight: bold;
+    }
+  
+    &.current .line {
+      background-color: #ffeb3b; /* Optional yellow line */
+    }
+  
+  }
+  
